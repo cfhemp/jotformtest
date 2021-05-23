@@ -39,5 +39,66 @@
     	</div>
     </div>
 </div>
+    <?php
+/******************************************************
+ 
+JotForm to MySQL Database Through Webhook - Sample Script
+Elton Cris - JotForm Tech Support
+www.jotform.com
+ 
+Test form: https://form.jotform.com/62893435003959
+Check request here: https://jotthemes.000webhostapp.com/jotform/view.php
+ 
+******************************************************/
+ 
+//Replace with your DB Details
+$servername = "localhost";
+$username = "idshubsc_kliptu";
+$password = 'Rzp$vA}7CES{';
+$dbname = "idshubsc_crypto";
+$dbtable = "orders";
+ 
+//Create connection
+$mysqli = new mysqli($servername, $username, $password, $dbname);
+ 
+//Check connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+//Get field values from the form
+//Get unique submissionID - nothing to change here
+$sid = $mysqli->real_escape_string($_POST['submission_id']);
+
+
+/*foreach ($_POST as $key => $value) {
+    echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+}*/
+ 
+//Get form field values and decode - nothing to change here
+$fieldvalues = $_REQUEST['rawRequest'];
+$obj = json_decode($fieldvalues, true);
+
+
+//Replace the field names from your form here
+$user_email = $mysqli->real_escape_string($_POST['email']);
+if($_POST['payment']=="BitCoin"){
+$amount_usd = $mysqli->real_escape_string($_POST['15discount280']);
+}
+else{
+$amount_usd = $mysqli->real_escape_string($_POST['total']);
+}
+$amount_usd = str_replace('$','',$amount_usd);
+
+
+
+$user_email = "";
+if(isset($_GET['mail']))
+    $user_email = $_GET['mail'];
+
+$amount_usd = "";
+if(isset($_GET['amount']))
+    $amount_usd = $_GET['amount'];
+    
+?>
 </body>
 </html>
