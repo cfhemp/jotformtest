@@ -6,53 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-    	<div class="col-md-4 col-sm-6 mx-auto">
-            <p style="margin:1.5rem 0;" class="h4 text-center">IdsHubs.com</p>
-            <p style="margin:1.5rem 0;" class="h4 text-center"><a href="https://track.idshubs.com" target="_blank">Track Order</a></p>
-            <div class="card">
-            	<div class="card-body">
-                    <form action="create_transaction.php" method="post">
-                        <div class="form-group">
-                            <label>Enter email address</label>
-                            <input type="text" name="buyer_email" <?php if($user_email!=""){echo "readonly";} ?> class="form-control" value="<?php echo $user_email; ?>" placeholder="e.g. yourname@gmail.com" />
-                            <input type="hidden" name="sid" readonly value="<?php echo $sid; ?>">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Enter deposit amount (USD)</label>
-                            <input type="text" name="amount" readonly class="form-control" value="<?php echo $amount_usd; ?>" placeholder="e.g. 10" />
-                        </div>
-                        <div class="form-group">
-                            <label>Payment via Cryptocoins</label>
-                            <select name="currency2" class="form-control">
-                                <option value="BTC">BTC - Bitcoin</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block" type="submit" name="btnDeposit">Pay Now</button>
-                        </div>        
-                    </form>
-            	</div>
-            </div>
-    	</div>
-    </div>
-</div>
     <?php
-/******************************************************
- 
-JotForm to MySQL Database Through Webhook - Sample Script
-Elton Cris - JotForm Tech Support
-www.jotform.com
- 
-Test form: https://form.jotform.com/62893435003959
-Check request here: https://jotthemes.000webhostapp.com/jotform/view.php
- 
-******************************************************/
- 
-
- 
 //Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbname);
  
@@ -95,5 +49,39 @@ if(isset($_GET['amount']))
     $amount_usd = $_GET['amount'];
     
 ?>
+<div class="container">
+    <div class="row">
+    	<div class="col-md-4 col-sm-6 mx-auto">
+            <p style="margin:1.5rem 0;" class="h4 text-center">IdsHubs.com</p>
+            <p style="margin:1.5rem 0;" class="h4 text-center"><a href="https://track.idshubs.com" target="_blank">Track Order</a></p>
+            <div class="card">
+            	<div class="card-body">
+                    <form action="create_transaction.php" method="post">
+                        <div class="form-group">
+                            <label>Enter email address</label>
+                            <input type="text" name="buyer_email" <?php if($user_email!=""){echo "readonly";} ?> class="form-control" value="<?php echo $user_email; ?>" placeholder="e.g. yourname@gmail.com" />
+                            <input type="hidden" name="sid" readonly value="<?php echo $sid; ?>">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Enter deposit amount (USD)</label>
+                            <input type="text" name="amount" readonly class="form-control" value="<?php echo $amount_usd; ?>" placeholder="e.g. 10" />
+                        </div>
+                        <div class="form-group">
+                            <label>Payment via Cryptocoins</label>
+                            <select name="currency2" class="form-control">
+                                <option value="BTC">BTC - Bitcoin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block" type="submit" name="btnDeposit">Pay Now</button>
+                        </div>        
+                    </form>
+            	</div>
+            </div>
+    	</div>
+    </div>
+</div>
+    
 </body>
 </html>
