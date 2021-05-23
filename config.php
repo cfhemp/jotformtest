@@ -12,7 +12,7 @@ $config['ipn_secret'] = 'lO+m9)Gh.NbP$9755KkO&S';
 $config['ipn_debug_email'] = 'iamvasim@gmail.com';
 
 
-$mysqli = new mysqli('localhost', 'idshubsc_kliptu', 'Rzp$vA}7CES{', 'idshubsc_crypto');
+$mysqli = new mysqli('ik1eybdutgxsm0lo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 'h03kddpu6y86boed', 'd5b1yqxi8wlqcwaw', 'pqj6gu407s08pmu7');
 
 // Check connection
 if ($mysqli->connect_error) {
