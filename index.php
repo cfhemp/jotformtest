@@ -1,5 +1,3 @@
 <?php
-/******************************************************
- 
-JotForm to MySQL Database Through Webhook - Sample Script
-
+// PHP code goes here
+?>
