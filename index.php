@@ -51,12 +51,7 @@ Check request here: https://jotthemes.000webhostapp.com/jotform/view.php
  
 ******************************************************/
  
-//Replace with your DB Details
-$servername = "localhost";
-$username = "idshubsc_kliptu";
-$password = 'Rzp$vA}7CES{';
-$dbname = "idshubsc_crypto";
-$dbtable = "orders";
+
  
 //Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbname);
