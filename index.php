@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 <?php
-// PHP code goes here
-test
+$color = "red";
+echo "My car is " . $color . "<br>";
+echo "My house is " . $COLOR . "<br>";
+echo "My boat is " . $coLOR . "<br>";
 ?>
+
+</body>
+</html>
