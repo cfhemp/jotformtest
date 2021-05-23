@@ -12,12 +12,14 @@ $config['ipn_secret'] = 'lO+m9)Gh.NbP$9755KkO&S';
 $config['ipn_debug_email'] = 'iamvasim@gmail.com';
 
 
-$mysqli = new mysqli('ik1eybdutgxsm0lo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 'h03kddpu6y86boed', 'd5b1yqxi8wlqcwaw', 'pqj6gu407s08pmu7');
+// Create connection
+$conn = new mysqli($hostname, $username, $password, $database);
 
 // Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+echo "Connection was successfully established!";
 
 function send_email($to, $subject, $body)
 {
