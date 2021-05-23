@@ -6,30 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <?php
-
-
-//Replace the field names from your form here
-$user_email = $mysqli->real_escape_string($_POST['email']);
-if($_POST['payment']=="BitCoin"){
-$amount_usd = $mysqli->real_escape_string($_POST['15discount280']);
-}
-else{
-$amount_usd = $mysqli->real_escape_string($_POST['total']);
-}
-$amount_usd = str_replace('$','',$amount_usd);
-
-
-
-$user_email = "";
-if(isset($_GET['mail']))
-    $user_email = $_GET['mail'];
-
-$amount_usd = "";
-if(isset($_GET['amount']))
-    $amount_usd = $_GET['amount'];
-    
-?>
+   
 <div class="container">
     <div class="row">
     	<div class="col-md-4 col-sm-6 mx-auto">
