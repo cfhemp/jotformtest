@@ -23,7 +23,7 @@
                         
                         <div class="form-group">
                             <label>Enter deposit amount (USD)</label>
-                            <input type="text" name="amount" readonly class="form-control" value="<?php echo $amount_usd; ?>" placeholder="e.g. 10" />
+                            <input type="text" name="amount"  placeholder="10" />
                         </div>
                         <div class="form-group">
                             <label>Payment via Cryptocoins</label>
