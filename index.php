@@ -7,25 +7,6 @@
 </head>
 <body>
     <?php
-//Create connection
-$mysqli = new mysqli($servername, $username, $password, $dbname);
- 
-//Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-//Get field values from the form
-//Get unique submissionID - nothing to change here
-$sid = $mysqli->real_escape_string($_POST['submission_id']);
-
-
-/*foreach ($_POST as $key => $value) {
-    echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-}*/
- 
-//Get form field values and decode - nothing to change here
-$fieldvalues = $_REQUEST['rawRequest'];
-$obj = json_decode($fieldvalues, true);
 
 
 //Replace the field names from your form here
